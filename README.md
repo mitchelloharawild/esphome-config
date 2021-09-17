@@ -1,13 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# My <img src='esphome.svg' alt='ESPHome' style="height:1.2em;margin-bottom:-0.25em" /> devices
+# My <img src='esphome.png' alt='ESPHome'/> devices
 
 This repository describes IoT devices that I have made or flashed to use
 [ESPHome](https://esphome.io/). ESPHome allows you to easily interface
 sensors and control outputs using ESP8266/ESP32 microcontrollers for use
 with home automation platforms such as [Home
-Assistant](https://www.home-assistant.io/). Sensor or output modules
+Assistant](https://www.home-assistant.io/). Sensor or output components
 connected to the microcontroller are described in a YAML configuration
 file, which is an abstracts the usual complication of finding and using
 good libraries for interfacing them.
@@ -30,8 +30,21 @@ idea:
 > [*BBC: Amazon web outage breaks vacuums and
 > doorbells*](https://www.bbc.com/news/technology-55087054)
 
-Taking control of your own devices can be tricky, so I’m very grateful
-to the open source community (especially ESPHome and Home Assistant) for
-making this easy!
+Taking control of commercially available IoT devices can be tricky, so
+I’m very grateful to the open source contributors for making this easy!
+
+There are several websites which help describe how to reflash these
+devices for local control:
+
+-   ESPHome Devices provides product descriptions and configuration
+    files (<https://www.esphome-devices.com/>).
+-   Tasmota Supported Devices Repository is a huge list of devices that
+    can be reflashed with Tasmota. Tasmota is another popular firmware
+    configurator for ESP8266/ESP32 devices. If it can be flashed with
+    Tasmota, then you can also use ESPHome. This repository is nice as
+    it provides a table of pins for the components in the device
+    (<https://templates.blakadder.com/>).
+-   The ESPHome cookbook provides recipes for using ESPHome with
+    commercial and DIY devices (<https://www.esphome.io/cookbook/>).
 
 Here is a table of devices that I use ESPHome with:
