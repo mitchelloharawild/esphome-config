@@ -1,0 +1,47 @@
+substitutions:
+  hostname: 'xiaomilight-a'
+esphome:
+  name: $hostname
+  platform: ESP8266
+  board: esp_wroom_02
+  board_flash_mode: dout
+  includes: 
+    - xiaomi_light.h
+
+web_server:
+  port: 80
+wifi:
+  networks:
+  - ssid: !secret wifi_ssid
+    password: !secret wifi_password
+  manual_ip:
+    static_ip: 192.168.1.182
+    gateway: 192.168.1.1
+    subnet: 255.255.255.0
+
+logger:
+  level: DEBUG
+  esp8266_store_log_strings_in_flash: False
+
+api:
+
+ota:
+
+output:
+  - platform: esp8266_pwm
+    pin: GPIO12
+    id: out_cw
+  - platform: esp8266_pwm
+    pin: GPIO15
+    id: out_b
+
+
+light:
+  - platform: custom 
+    lambda: |- 
+      auto light_out = new XiaomiLight(id(out_cw),id(out_b)); 
+      App.register_component(light_out); 
+      return {light_out}; 
+    lights: 
+      - name: $hostname light
+        gamma_correct: 0
